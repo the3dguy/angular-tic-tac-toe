@@ -1,19 +1,7 @@
         <div class="row">
             <div class="container-fluid col-sm-7 col-xs-6">
                 <div class="row">
-                    <div class="col-xs-4 tictacbox">X</div>
-                    <div class="col-xs-4 tictacbox">O</div>
-                    <div class="col-xs-4 tictacbox">X</div>    
-                </div>
-                <div class="row">
-                    <div class="col-xs-4 tictacbox">O</div>
-                    <div class="col-xs-4 tictacbox">X</div>
-                    <div class="col-xs-4 tictacbox">O</div>    
-                </div>
-                <div class="row">
-                    <div class="col-xs-4 tictacbox">X</div>
-                    <div class="col-xs-4 tictacbox">O</div>
-                    <div class="col-xs-4 tictacbox">X</div>    
+                    <div class="col-xs-4 tictacbox" ng-repeat="square in squares" ng-click="playMove($index)">{{squareVal}}</div>   
                 </div>
             </div>
             <div class="col-sm-5 col-xs-6"></div>
