@@ -1,5 +1,9 @@
 'use strict';
-
+/*
+ * Tic Tac Toe - Human Player versus AI Opponent 
+ * Originally created by Chris Hoskins (chris@polyfactory.com)
+ * Created using Yeoman, Angular, Bootstrap
+ */
 angular.module('ticTacToeApp').controller('MainCtrl', ['$scope', function ($scope) {
     //Setting up the initial game board - this also is what draws the game board on the screen
     $scope.squares = [{'id':'0', 'val':'', 'win':false},{'id':'1', 'val':'', 'win':false},{'id':'2', 'val':'', 'win':false},{'id':'3', 'val':'', 'win':false},{'id':'4', 'val':'', 'win':false},{'id':'5', 'val':'', 'win':false},{'id':'6', 'val':'', 'win':false},{'id':'7', 'val':'', 'win':false},{'id':'8', 'val':'', 'win':false}];
