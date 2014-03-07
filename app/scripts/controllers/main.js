@@ -15,13 +15,16 @@ angular.module('ticTacToeApp').controller('MainCtrl', ['$scope', function ($scop
     $scope.playMove = function(index) {
         //Only lets the player move if the game hasn't ended yet
         if(!$scope.gameEnded) {
-          //Sets the actual move for the human player
-          $scope.squares[index].val = 'X';
-          moves.push(index);
-          //Checks if the AI won the game
-          checkIfWon();
-          //Computer will move
-          aiMove();
+          //Only allows the human player to move in a non occupied spot  
+          if(!$scope.squares[index].val) {
+            //Sets the actual move for the human player
+            $scope.squares[index].val = 'X';
+            moves.push(index);
+            //Checks if the AI won the game
+            checkIfWon();
+            //Computer will move
+            aiMove();
+          }    
         }  
       };
     
@@ -90,7 +93,7 @@ angular.module('ticTacToeApp').controller('MainCtrl', ['$scope', function ($scop
           }
         }
         else {
-          aiCanWin();
+          ifAICanWin();
           if(!$scope.gameEnded) {
             //If AI's first move was the middle, now move to edges and block human player
             if($scope.squares[4].val === 'O') {
@@ -262,7 +265,7 @@ angular.module('ticTacToeApp').controller('MainCtrl', ['$scope', function ($scop
       
 
     //Called to determine if the AI can win with the next move
-    function aiCanWin() {
+    function ifAICanWin() {
         if($scope.squares[0].val === 'O' && $scope.squares[1].val === 'O' && !$scope.squares[2].val) {
           aiMoveSet(2);
           $scope.gameEnded = true;
@@ -325,6 +328,30 @@ angular.module('ticTacToeApp').controller('MainCtrl', ['$scope', function ($scop
         }
         else if($scope.squares[8].val === 'O' && $scope.squares[4].val === 'O' && !$scope.squares[0].val) {
           aiMoveSet(0);
+          $scope.gameEnded = true;
+        }
+        else if($scope.squares[1].val === 'O' && $scope.squares[4].val === 'O' && !$scope.squares[7].val) {
+          aiMoveSet(7);
+          $scope.gameEnded = true;
+        }
+        else if($scope.squares[1].val === 'O' && $scope.squares[7].val === 'O' && !$scope.squares[4].val) {
+          aiMoveSet(4);
+          $scope.gameEnded = true;
+        }
+        else if($scope.squares[4].val === 'O' && $scope.squares[7].val === 'O' && !$scope.squares[1].val) {
+          aiMoveSet(1);
+          $scope.gameEnded = true;
+        }
+        else if($scope.squares[3].val === 'O' && $scope.squares[4].val === 'O' && !$scope.squares[5].val) {
+          aiMoveSet(5);
+          $scope.gameEnded = true;
+        }
+        else if($scope.squares[3].val === 'O' && $scope.squares[5].val === 'O' && !$scope.squares[4].val) {
+          aiMoveSet(4);
+          $scope.gameEnded = true;
+        }
+        else if($scope.squares[4].val === 'O' && $scope.squares[5].val === 'O' && !$scope.squares[3].val) {
+          aiMoveSet(3);
           $scope.gameEnded = true;
         }
       }
