@@ -1,1 +1,0 @@
-Tic Tac Toe game originally based off of a 3 X 3 grid and written with Angular and Bootstrap by Chris Hoskins (chris@polyfactory.com). The grid is responsive and can be scaled to various screen sizes. Human player moves first and computer player will move second. The computer player cannot be beaten. Originally scaffolding done using Yeoman.
