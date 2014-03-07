@@ -130,7 +130,20 @@ angular.module('ticTacToeApp').controller('MainCtrl', ['$scope', function ($scop
               else if($scope.squares[6].val === 'X' && $scope.squares[8].val === 'X' && !$scope.squares[7].val) {
                 aiMoveSet(7);
               }
-              //Move was blocked, move to next available space
+              //Blocking all 4 corners if necessary
+              else if($scope.squares[1].val === 'X' && $scope.squares[5].val === 'X' && !$scope.squares[2].val) {
+                aiMoveSet(2);
+              }
+              else if($scope.squares[1].val === 'X' && $scope.squares[3].val === 'X' && !$scope.squares[0].val) {
+                aiMoveSet(0);
+              }
+              else if($scope.squares[3].val === 'X' && $scope.squares[7].val === 'X' && !$scope.squares[6].val) {
+                aiMoveSet(6);
+              }
+              else if($scope.squares[5].val === 'X' && $scope.squares[7].val === 'X' && !$scope.squares[8].val) {
+                aiMoveSet(8);
+              }
+              //Move were all blocked, move to next available space
               else {
                 aiChooseAvailSpaceMiddleFirst();
               }
