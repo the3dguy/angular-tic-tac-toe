@@ -28,8 +28,8 @@ angular.module('ticTacToeApp').controller('MainCtrl', ['$scope', function ($scop
             checkIfWon();
             //Computer will move
             aiMove();
-          }    
-        }  
+          }
+        }
       };
     
     //This function will check all 8 possible combinations of winning and report a winner
@@ -226,20 +226,20 @@ angular.module('ticTacToeApp').controller('MainCtrl', ['$scope', function ($scop
         var proceed = true;
         //Makes the AI stay away from the corners if they are not blocking or trying to win in the next round
         if(!$scope.squares[1].val) {
-            aiMoveSet(1);
-            return;
+          aiMoveSet(1);
+          return;
         }
         else if(!$scope.squares[3].val) {
-            aiMoveSet(3);
-            return;
+          aiMoveSet(3);
+          return;
         }
         else if(!$scope.squares[5].val) {
-            aiMoveSet(5);
-            return;
+          aiMoveSet(5);
+          return;
         }
         else if(!$scope.squares[7].val) {
-            aiMoveSet(7);
-            return;
+          aiMoveSet(7);
+          return;
         }
         //Cannot do a break in an Angular foreach, so must do it this way.  If game board size changes to large board size, this should be changed to native foreach
         angular.forEach($scope.squares, function(item) {
@@ -255,8 +255,8 @@ angular.module('ticTacToeApp').controller('MainCtrl', ['$scope', function ($scop
         var proceed = true;
         //Makes the AI stay away from the corners if they are not blocking or trying to win in the next round
         if(!$scope.squares[0].val) {
-            aiMoveSet(0);
-            return;
+          aiMoveSet(0);
+          return;
         }
         //Cannot do a break in an Angular foreach, so must do it this way.  If game board size changes to large board size, this should be changed to native foreach
         angular.forEach($scope.squares, function(item) {
