@@ -23,7 +23,7 @@ angular.module('ticTacToeApp')
             item.val = '';
             item.win = false;
           });
-    }; 
+      };
   }])
   .controller('MainCtrl', ['$scope', 'SquaresData', 'GameData', function ($scope, SquaresData, GameData) {
     $scope.squares = SquaresData;
