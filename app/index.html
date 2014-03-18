@@ -29,12 +29,14 @@
         <div class="row">
             <div class="jumbotron col-sm-7 col-xs-6">
                 <h2 class="gameTitle">Tic Tac Toe</h2>
-                <div type="button" class="btn btn-primary" ng-click="beginNewGame()">Begin New Game</div>
+                <div ng-controller="BeginGameCtrl">
+                    <div type="button" class="btn btn-primary" ng-click="beginNewGame()">Begin New Game</div>
+                </div>
             </div>
             <div class="col-sm-5 col-xs-6"></div>
         </div>
         <div class="lostGame" ng-show="{{gameEnded}}" ng-cloak>Sorry, but you lost the game!</div>
-        <div ng-view=""></div>
+        <div ng-view=""></div> 
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
